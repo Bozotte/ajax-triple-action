@@ -1,0 +1,6 @@
+<li>
+  <%= task.content  %>
+  <% unless task.deadline.nil? %>
+    , à faire avant : <%= task.deadline.strftime('%D')  %>
+  <% end %>
+</li>
