@@ -9,11 +9,16 @@ class TasksController < ApplicationController
     @category = Category.find(category_params)
     @task.category = @category
     if @task.save
-      redirect_to root_path
-      flash[:notice] = "Task created"
+      respond_to do |format|
+        format.html { redirect_to tasks_path }
+        format.js
+        flash[:notice] = "Task created"
+      end
     else
-      redirect_to root_path
-      flash[:alert] = "Please try again"
+      respond_to do |format|
+        format.html { redirect_to tasks_path }
+        flash[:alert] = "Please try again"
+      end
     end
   end
 
