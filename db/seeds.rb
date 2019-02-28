@@ -22,7 +22,7 @@ require 'faker'
   puts "Utilisateur(s) ajouté(s) à la db : #{i+1}"
 end
 
-3.times do |j|
-  my_email = Email.create(object: Faker::Games::LeagueOfLegends.masteries, body: Faker::TvShows::RickAndMorty.quote)
+20.times do |j|
+  email = Email.create(object: Faker::TvShows::RickAndMorty.character, body: Faker::TvShows::RickAndMorty.quote, read: false)
   puts "Email(s) ajouté(s) à la db : #{j+1}"
 end

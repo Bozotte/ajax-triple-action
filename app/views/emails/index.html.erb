@@ -18,13 +18,14 @@
           <tr id="email_<%=email.id%>">
             <td>
               <%= link_to email_path(email), :remote => true do %>
-                <% if email.read == false %>
-                  <span class="font-weight-bold">
+                <span id="enveloppe_<%= email.id %>">
+                <% if email.read == true %>
+                  <i class="fas fa-envelope-open"></i>
                 <% else %>
-                  <span>
+                  <i class="fas fa-envelope"></i>
                 <% end %>
-                <%= email.object %>
                 </span>
+                <%= email.object %>
               <% end %>
             </td>
             <td>
