@@ -1,0 +1,4 @@
+console.log($("<%= @email %>.email-body"));
+$('.show').bind('ajax:success', function() {
+  $("<%= @email %>.email-body").appendTo($('#email-body'));
+})
