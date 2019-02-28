@@ -21,3 +21,7 @@ require 'faker'
   end
   puts "Utilisateur(s) ajouté(s) à la db : #{i+1}"
 end
+
+20.times do
+  email = Email.create(object: Faker::TvShows::RickAndMorty.character, body: Faker::TvShows::RickAndMorty.quote, read: false)
+end
