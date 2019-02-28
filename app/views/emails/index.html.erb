@@ -17,6 +17,13 @@
           <% @emails.each do |email| %>
             <tr>
               <td>
+                <span id="enveloppe_<%= email.id %>">
+                <% if email.read == true %>
+                  <i class="fas fa-envelope-open"></i>
+                <% else %>
+                  <i class="fas fa-envelope"></i>
+                <% end %>
+                </span>
                 <%= link_to email_path(email), remote: true do %>
                 <%= email.object %>
               <% end %>
