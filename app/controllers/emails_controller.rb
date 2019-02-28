@@ -15,6 +15,7 @@ class EmailsController < ApplicationController
       format.js
       @email = Email.find(params[:id])
       @email.read = true
+      @email.save
     end
   end
 
