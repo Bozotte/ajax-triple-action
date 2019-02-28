@@ -1,4 +1,2 @@
-console.log($("<%= @email %>.email-body"));
-$('.show').bind('ajax:success', function() {
-  $("<%= @email %>.email-body").appendTo($('#email-body'));
-})
+$('#email').html("<%= j render 'email', email: @email %>");
+$("#email_<%=@email.id%> span").removeClass();

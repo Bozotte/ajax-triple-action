@@ -10,14 +10,13 @@ class EmailsController < ApplicationController
   # GET /emails/1
   # GET /emails/1.json
   def show
-    @show_ajax = params[:show_ajax]
-    if @show_ajax == true
-      @email.read = true
+    if @email.read == false
+       @email.update(read: true)
+    end
       respond_to do |format|
-        format.html { redirect_to email_path }
+        format.html { redirect_to emails_path }
         format.js
       end
-    end
   end
 
   # GET /emails/new
